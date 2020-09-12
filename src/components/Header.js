@@ -6,9 +6,9 @@ const Header = ({ changeTheme, theme }) => {
 	return (
 		<StyledHeader theme={theme} role="banner">
 			<h1>Conversor de Medidas</h1>
-			<div onClick={changeTheme}>
+			<ChangeTheme onClick={changeTheme}>
 				<LightBulb width={20} />
-			</div>
+			</ChangeTheme>
 		</StyledHeader>
 	);
 };
@@ -19,5 +19,9 @@ const StyledHeader = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.2rem 2rem;
+	padding: 0 2rem;
+`;
+
+const ChangeTheme = styled.div`
+	cursor: pointer;
 `;
