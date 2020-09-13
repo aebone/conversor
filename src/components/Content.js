@@ -18,7 +18,7 @@ const Cards = styled.main`
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
 	grid-gap: 1rem;
-	padding: 1rem;
+	padding: 1.5rem 1rem;
 
 	@media (max-width: 480px) {
 		display: flex;
