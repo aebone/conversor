@@ -28,7 +28,6 @@ const ChangeTheme = styled.div`
 	padding: 0.2rem 0.5rem;
 	border: 1px solid;
 	border-radius: 5px;
-	transition: 0.5s all ease-out;
 	
 	&:hover {
 		color: ${props => props.theme.headerBody};
