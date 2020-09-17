@@ -7,8 +7,8 @@ const Header = ({ changeTheme, theme }) => {
 		<StyledHeader theme={theme} role="banner">
 			<Logo>+- ×÷</Logo>
 			<h1>Conversor de Medidas</h1>
-			<ChangeTheme onClick={changeTheme}>
-				<LightBulb width={20} />
+			<ChangeTheme tabIndex={"0"} role={"button"} aria-pressed={theme==="dark"} id={"change-theme"} onClick={changeTheme} onKeyPress={changeTheme}>
+				<LightBulb width={12} />
 			</ChangeTheme>
 		</StyledHeader>
 	);
@@ -25,6 +25,15 @@ const StyledHeader = styled.header`
 const ChangeTheme = styled.div`
 	cursor: pointer;
 	margin-left: auto;
+	padding: 0.2rem 0.5rem;
+	border: 1px solid;
+	border-radius: 5px;
+	transition: 0.5s all ease-out;
+	
+	&:hover {
+		color: ${props => props.theme.headerBody};
+		background: ${props => props.theme.headerText};
+	}
 `;
 
 const Logo = styled.span`
