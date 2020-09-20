@@ -19,7 +19,8 @@ export default Header;
 const StyledHeader = styled.header`
 	display: flex;
 	align-items: center;
-	padding: 0 2rem;
+	padding: .5rem 2rem;
+	box-shadow: 0 5px 20px -10px #000;
 `;
 
 const ChangeTheme = styled.div`
@@ -48,4 +49,5 @@ const Logo = styled.span`
 	line-height: 0.8rem;
 	color: ${props => props.theme.headerBody};
 	background: ${props => props.theme.headerText};
+	font-weight: bold;
 `;

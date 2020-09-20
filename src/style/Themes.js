@@ -1,13 +1,13 @@
 export const lightTheme = {
 	body: "#ffffff",
-	text: "#1f1f1f",
-	headerBody: "#1f1f1f",
+	text: "#3e3f3a",
+	headerBody: "#007196",
 	headerText: "#ffffff"
 };
 
 export const darkTheme = {
-	body: "#1f1f1f",
+	body: "#3e3f3a",
 	text: "#ffffff",
-	headerBody: "#ffffff",
-	headerText: "#1f1f1f"
+	headerBody: "#3e3f3a",
+	headerText: "#ffffff"
 };

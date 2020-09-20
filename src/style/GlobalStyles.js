@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.headerText};
   }
 
-  h1 {
-    font-size: 1.4rem;
-  }
-  `;
+  h1 { font-size: 1.4rem; }
+  
+  h2 { font-size: 1.2rem; border-bottom: 1px solid #c6c6c6; }
+`;
