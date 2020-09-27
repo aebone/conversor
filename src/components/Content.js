@@ -1,44 +1,89 @@
 import React from "react";
 import styled from "styled-components";
 import { getWeight } from "../helpers/calculations";
-import { weight } from "../constants/Options";
+import { units } from "../constants/Units";
 
 class Content extends React.Component {
-  state = { from: "", to: "" };
+  state = {
+    weight: { from: "lb", to: "lb", value: 1 },
+    temperature: { from: "c", to: "c", value: 1 },
+  };
+
   render() {
     return (
       <Cards>
-        <CardDetail>
-          <h2>Peso</h2>
-          <div>
-            <label>Valor</label>
-            <input />
-          </div>
-          <div>
-            <label>De</label>
-            <select>
-              {weight.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label>Para</label>
-            <select>
-              {weight.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <button>Converter</button>
-          <p>{getWeight(9, 8)}</p>
-        </CardDetail>
-        <CardDetail>oi</CardDetail>
-        <CardDetail>oi</CardDetail>
+        {units.map((unit, index) => {
+          return (
+            <CardDetail key={index}>
+              <h2>{unit.name}</h2>
+              <div>
+                <label htmlFor={unit.id}>Valor</label>
+                <input
+                  value={this.state[unit.id].value}
+                  onChange={(event) =>
+                    this.setState({
+                      [unit.id]: {
+                        ...this.state[unit.id],
+                        value: event.target.value,
+                      },
+                    })
+                  }
+                />
+              </div>
+              <div>
+                <label>De</label>
+                <select
+                  value={this.state[unit.id].from}
+                  onChange={(event) =>
+                    this.setState({
+                      [unit.id]: {
+                        ...this.state[unit.id],
+                        from: event.target.value,
+                      },
+                    })
+                  }
+                >
+                  {unit.options.map((option, index) => {
+                    return (
+                      <option key={index} value={option.value}>
+                        {option.label}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <div>
+                <label>Para</label>
+                <select
+                  value={this.state[unit.id].to}
+                  onChange={(event) =>
+                    this.setState({
+                      [unit.id]: {
+                        ...this.state[unit.id],
+                        to: event.target.value,
+                      },
+                    })
+                  }
+                >
+                  {unit.options.map((option, index) => {
+                    return (
+                      <option key={index} value={option.value}>
+                        {option.label}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <div>
+                {getWeight(
+                  this.state[unit.id].from,
+                  this.state[unit.id].to,
+                  this.state[unit.id].value
+                )}
+              </div>
+            </CardDetail>
+          );
+        })}
       </Cards>
     );
   }
