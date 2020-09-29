@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { getWeight } from "../helpers/calculations";
-import { units } from "../constants/Units";
+import { units } from "../constants/units";
+import { convert } from "../helpers/convert";
 
 class Content extends React.Component {
   state = {
     weight: { from: "lb", to: "lb", value: 1 },
     temperature: { from: "c", to: "c", value: 1 },
+    speed: { from: "ms", to: "ms", value: 1 },
   };
 
   render() {
@@ -75,7 +76,8 @@ class Content extends React.Component {
                 </select>
               </div>
               <div>
-                {getWeight(
+                {convert(
+                  unit.id,
                   this.state[unit.id].from,
                   this.state[unit.id].to,
                   this.state[unit.id].value
