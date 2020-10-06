@@ -18,8 +18,8 @@ export const length = {
     { label: "Quilômetro (km)", value: KILOMETER },
     { label: "Polegada (in)", value: INCH },
     { label: "Jarda (yd)", value: YARD },
-    { label: "Pés - US (ft-us)", value: FOOT_US },
-    { label: "Pés (ft)", value: FOOT },
+    { label: "Pé - US (ft-us)", value: FOOT_US },
+    { label: "Pé (ft)", value: FOOT },
     { label: "Milha (mi)", value: MILE },
   ],
 };

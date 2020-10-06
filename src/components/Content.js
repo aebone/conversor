@@ -6,6 +6,7 @@ import { KILOMETER_PER_HOUR, MILE_PER_HOUR } from "../utils/speed";
 import { SQUARE_METER, SQUARE_MILE } from "../utils/area";
 import { DAY, HOUR } from "../utils/time";
 import { GRADIAN, RADIAN } from "../utils/angle";
+import { KILOGRAM, POUND } from "../utils/mass";
 const convert = require("convert-units");
 
 class Content extends React.Component {
@@ -15,6 +16,7 @@ class Content extends React.Component {
     area: { value: 1, from: SQUARE_METER, to: SQUARE_MILE },
     time: { value: 1, from: DAY, to: HOUR },
     angle: { value: 1, from: GRADIAN, to: RADIAN },
+    mass: { value: 1, from: KILOGRAM, to: POUND },
   };
 
   render() {
@@ -25,7 +27,7 @@ class Content extends React.Component {
             <CardDetail key={unit.key}>
               <h2>{unit.label}</h2>
               <div>
-                <label for={unit.key}>Valor</label>
+                <label htmlFor={unit.key}>Valor</label>
                 <input
                   id={unit.key}
                   type={"number"}
@@ -53,9 +55,9 @@ class Content extends React.Component {
                     })
                   }
                 >
-                  {unit.options.map((option) => {
+                  {unit.options.map((option, index) => {
                     return (
-                      <option key={option.value} value={option.value}>
+                      <option key={index} value={option.value}>
                         {option.label}
                       </option>
                     );
@@ -75,9 +77,9 @@ class Content extends React.Component {
                     })
                   }
                 >
-                  {unit.options.map((option) => {
+                  {unit.options.map((option, index) => {
                     return (
-                      <option key={option.value} value={option.value}>
+                      <option key={index} value={option.value}>
                         {option.label}
                       </option>
                     );
