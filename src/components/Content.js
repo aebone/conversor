@@ -26,7 +26,7 @@ class Content extends React.Component {
           return (
             <CardDetail key={unit.key}>
               <h2>{unit.label}</h2>
-              <div>
+              <InputRow>
                 <label htmlFor={unit.key}>Valor</label>
                 <input
                   id={unit.key}
@@ -41,8 +41,8 @@ class Content extends React.Component {
                     })
                   }
                 />
-              </div>
-              <div>
+              </InputRow>
+              <InputRow>
                 <label>De</label>
                 <select
                   value={this.state[unit.key].from}
@@ -63,8 +63,8 @@ class Content extends React.Component {
                     );
                   })}
                 </select>
-              </div>
-              <div>
+              </InputRow>
+              <InputRow>
                 <label>Para</label>
                 <select
                   value={this.state[unit.key].to}
@@ -85,10 +85,12 @@ class Content extends React.Component {
                     );
                   })}
                 </select>
-              </div>
-              {convert(this.state[unit.key].value)
-                .from(this.state[unit.key].from)
-                .to(this.state[unit.key].to)}
+              </InputRow>
+              <Result>
+                {convert(this.state[unit.key].value)
+                  .from(this.state[unit.key].from)
+                  .to(this.state[unit.key].to)}
+              </Result>
             </CardDetail>
           );
         })}
@@ -111,6 +113,27 @@ const Cards = styled.main`
 `;
 
 const CardDetail = styled.article`
-  padding: 1em;
+  padding: 1rem;
   border: 1px solid;
+`;
+
+const InputRow = styled.div`
+  display: flex;
+  margin: 10px 0;
+
+  label {
+    width: 20%;
+    text-align: right;
+    padding: 5px 10px;
+  }
+
+  input,
+  select {
+    flex-grow: 1;
+  }
+`;
+
+const Result = styled.p`
+  text-align: right;
+  font-weight: bold;
 `;
