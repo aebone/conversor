@@ -5,11 +5,8 @@ const convert = require("convert-units");
 
 class Content extends React.Component {
   state = {
-    length: {
-      value: 1,
-      from: "mi",
-      to: "km",
-    },
+    length: { value: 1, from: "mi", to: "km" },
+    speed: { value: 1, from: "m/h", to: "km/h" },
   };
 
   render() {
