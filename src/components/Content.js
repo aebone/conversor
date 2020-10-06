@@ -1,30 +1,33 @@
 import React from "react";
 import styled from "styled-components";
-import { units } from "../constants/units";
-import { convert } from "../helpers/convert";
+import { units } from "../utils/units";
+const convert = require("convert-units");
 
 class Content extends React.Component {
   state = {
-    weight: { from: "lb", to: "lb", value: 1 },
-    temperature: { from: "c", to: "c", value: 1 },
-    speed: { from: "ms", to: "ms", value: 1 },
+    length: {
+      value: 1,
+      from: "mi",
+      to: "km",
+    },
   };
 
   render() {
     return (
       <Cards>
-        {units.map((unit, index) => {
+        {units.map((unit) => {
           return (
-            <CardDetail key={index}>
-              <h2>{unit.name}</h2>
+            <CardDetail key={unit.key}>
+              <h2>{unit.label}</h2>
               <div>
-                <label htmlFor={unit.id}>Valor</label>
+                <label>Valor</label>
                 <input
-                  value={this.state[unit.id].value}
+                  type={"number"}
+                  value={this.state[unit.key].value}
                   onChange={(event) =>
                     this.setState({
-                      [unit.id]: {
-                        ...this.state[unit.id],
+                      [unit.key]: {
+                        ...this.state[unit.key],
                         value: event.target.value,
                       },
                     })
@@ -34,19 +37,19 @@ class Content extends React.Component {
               <div>
                 <label>De</label>
                 <select
-                  value={this.state[unit.id].from}
+                  value={this.state[unit.key].from}
                   onChange={(event) =>
                     this.setState({
-                      [unit.id]: {
-                        ...this.state[unit.id],
+                      [unit.key]: {
+                        ...this.state[unit.key],
                         from: event.target.value,
                       },
                     })
                   }
                 >
-                  {unit.options.map((option, index) => {
+                  {unit.options.map((option) => {
                     return (
-                      <option key={index} value={option.value}>
+                      <option key={option.value} value={option.value}>
                         {option.label}
                       </option>
                     );
@@ -56,33 +59,28 @@ class Content extends React.Component {
               <div>
                 <label>Para</label>
                 <select
-                  value={this.state[unit.id].to}
+                  value={this.state[unit.key].to}
                   onChange={(event) =>
                     this.setState({
-                      [unit.id]: {
-                        ...this.state[unit.id],
+                      [unit.key]: {
+                        ...this.state[unit.key],
                         to: event.target.value,
                       },
                     })
                   }
                 >
-                  {unit.options.map((option, index) => {
+                  {unit.options.map((option) => {
                     return (
-                      <option key={index} value={option.value}>
+                      <option key={option.value} value={option.value}>
                         {option.label}
                       </option>
                     );
                   })}
                 </select>
               </div>
-              <div>
-                {convert(
-                  unit.id,
-                  this.state[unit.id].from,
-                  this.state[unit.id].to,
-                  this.state[unit.id].value
-                )}
-              </div>
+              {convert(this.state[unit.key].value)
+                .from(this.state[unit.key].from)
+                .to(this.state[unit.key].to)}
             </CardDetail>
           );
         })}
