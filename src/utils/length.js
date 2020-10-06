@@ -1,12 +1,12 @@
-const MILLIMETER = "mm";
-const CENTIMETER = "cm";
-const METER = "m";
-const KILOMETER = "km";
-const INCH = "in";
-const YARD = "yd";
-const FOOT_US = "ft-us";
-const FOOT = "ft";
-const MILE = "mi";
+export const MILLIMETER = "mm";
+export const CENTIMETER = "cm";
+export const METER = "m";
+export const KILOMETER = "km";
+export const INCH = "in";
+export const YARD = "yd";
+export const FOOT_US = "ft-us";
+export const FOOT = "ft";
+export const MILE = "mi";
 
 export const length = {
   label: "Comprimento",

@@ -1,12 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import { units } from "../utils/units";
+import { KILOMETER, MILE } from "../utils/length";
+import { KILOMETER_PER_HOUR, MILE_PER_HOUR } from "../utils/speed";
+import { SQUARE_METER, SQUARE_MILE } from "../utils/area";
+import { DAY, HOUR } from "../utils/time";
+import { GRADIAN, RADIAN } from "../utils/angle";
 const convert = require("convert-units");
 
 class Content extends React.Component {
   state = {
-    length: { value: 1, from: "mi", to: "km" },
-    speed: { value: 1, from: "m/h", to: "km/h" },
+    length: { value: 1, from: MILE, to: KILOMETER },
+    speed: { value: 1, from: MILE_PER_HOUR, to: KILOMETER_PER_HOUR },
+    area: { value: 1, from: SQUARE_METER, to: SQUARE_MILE },
+    time: { value: 1, from: DAY, to: HOUR },
+    angle: { value: 1, from: GRADIAN, to: RADIAN },
   };
 
   render() {
@@ -17,8 +25,9 @@ class Content extends React.Component {
             <CardDetail key={unit.key}>
               <h2>{unit.label}</h2>
               <div>
-                <label>Valor</label>
+                <label for={unit.key}>Valor</label>
                 <input
+                  id={unit.key}
                   type={"number"}
                   value={this.state[unit.key].value}
                   onChange={(event) =>

@@ -1,8 +1,8 @@
-const METER_PER_SECOND = "m/s";
-const KILOMETER_PER_HOUR = "km/h";
-const MILE_PER_HOUR = "m/h";
-const KNOT = "knot";
-const FOOT_PER_SECOND = "ft/s";
+export const METER_PER_SECOND = "m/s";
+export const KILOMETER_PER_HOUR = "km/h";
+export const MILE_PER_HOUR = "m/h";
+export const KNOT = "knot";
+export const FOOT_PER_SECOND = "ft/s";
 
 export const speed = {
   label: "Velocidade",

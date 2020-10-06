@@ -16,5 +16,5 @@ export const GlobalStyles = createGlobalStyle`
 
   h1 { font-size: 1.4rem; }
   
-  h2 { font-size: 1.2rem; border-bottom: 1px solid #c6c6c6; }
+  h2 { font-size: 1.2rem; border-bottom: 1px solid #c6c6c6; padding-bottom: 5px; }
 `;
