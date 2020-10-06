@@ -7,6 +7,9 @@ import { SQUARE_METER, SQUARE_MILE } from "../utils/area";
 import { DAY, HOUR } from "../utils/time";
 import { GRADIAN, RADIAN } from "../utils/angle";
 import { KILOGRAM, POUND } from "../utils/mass";
+import { LITRE, MILLILITRE } from "../utils/volume";
+import { JOULE, WATT_HOUR } from "../utils/energy";
+import { CELSIUS, FAHRENHEIT } from "../utils/temperature";
 const convert = require("convert-units");
 
 class Content extends React.Component {
@@ -17,6 +20,9 @@ class Content extends React.Component {
     time: { value: 1, from: DAY, to: HOUR },
     angle: { value: 1, from: GRADIAN, to: RADIAN },
     mass: { value: 1, from: KILOGRAM, to: POUND },
+    volume: { value: 1, from: LITRE, to: MILLILITRE },
+    energy: { value: 1, from: WATT_HOUR, to: JOULE },
+    temperature: { value: 1, from: CELSIUS, to: FAHRENHEIT },
   };
 
   render() {
