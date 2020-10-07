@@ -126,7 +126,7 @@ const Cards = styled.main`
 
 const CardDetail = styled.article`
   padding: 1rem;
-  border: 1px solid;
+  border: 1px #c6c6c6 solid;
 `;
 
 const InputRow = styled.div`
