@@ -10,6 +10,9 @@ import { KILOGRAM, POUND } from "../utils/mass";
 import { LITRE, MILLILITRE } from "../utils/volume";
 import { JOULE, WATT_HOUR } from "../utils/energy";
 import { CELSIUS, FAHRENHEIT } from "../utils/temperature";
+import { HERTZ, MILLIHERTZ } from "../utils/frequency";
+import { BAR, PASCAL } from "../utils/pressure";
+import { GIGABYTE, MEGABYTE } from "../utils/digital";
 const convert = require("convert-units");
 
 class Content extends React.Component {
@@ -23,6 +26,9 @@ class Content extends React.Component {
     volume: { value: 1, from: LITRE, to: MILLILITRE },
     energy: { value: 1, from: WATT_HOUR, to: JOULE },
     temperature: { value: 1, from: CELSIUS, to: FAHRENHEIT },
+    frequency: { value: 1, from: HERTZ, to: MILLIHERTZ },
+    pressure: { value: 1, from: PASCAL, to: BAR },
+    digital: { value: 1, from: MEGABYTE, to: GIGABYTE },
   };
 
   render() {

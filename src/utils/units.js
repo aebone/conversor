@@ -7,6 +7,9 @@ import { mass } from "./mass";
 import { volume } from "./volume";
 import { energy } from "./energy";
 import { temperature } from "./temperature";
+import { frequency } from "./frequency";
+import { pressure } from "./pressure";
+import { digital } from "./digital";
 
 export const units = [
   length,
@@ -18,4 +21,7 @@ export const units = [
   volume,
   energy,
   temperature,
+  frequency,
+  pressure,
+  digital,
 ];
