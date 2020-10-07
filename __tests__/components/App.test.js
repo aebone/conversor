@@ -1,7 +1,9 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
+import App from "../../src/components/App";
 
-test("hello jest", () => {
-  render(<p>Hello Jest!</p>);
-  expect(screen.getByText("Hello Jest!")).toBeInTheDocument();
+test("App snapshot", () => {
+  const component = renderer.create(<App />);
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
