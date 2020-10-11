@@ -41,7 +41,7 @@ class Content extends React.Component {
               <InputRow>
                 <label htmlFor={unit.key}>Valor</label>
                 <input
-                  id={unit.key}
+                  id={`value-${unit.key}`}
                   type={"number"}
                   value={this.state[unit.key].value}
                   onChange={(event) =>
@@ -57,6 +57,7 @@ class Content extends React.Component {
               <InputRow>
                 <label>De</label>
                 <select
+                  id={`from-${unit.key}`}
                   value={this.state[unit.key].from}
                   onChange={(event) =>
                     this.setState({
@@ -79,6 +80,7 @@ class Content extends React.Component {
               <InputRow>
                 <label>Para</label>
                 <select
+                  id={`to-${unit.key}`}
                   value={this.state[unit.key].to}
                   onChange={(event) =>
                     this.setState({
