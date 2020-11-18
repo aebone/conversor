@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../style/Themes";
 import { GlobalStyles } from "../style/GlobalStyles";
 import Header from "./Header";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Content from "./Content";
 
 class App extends React.Component {
@@ -21,8 +22,17 @@ class App extends React.Component {
         theme={this.state.theme === "light" ? lightTheme : darkTheme}
       >
         <GlobalStyles />
-        <Header changeTheme={this.changeTheme} theme={this.state.theme} />
-        <Content />
+        <Router>
+          <Header changeTheme={this.changeTheme} theme={this.state.theme} />
+          <Switch>
+            <Route path="/sistema-binario">
+              <h1>soon</h1>
+            </Route>
+            <Route path="/">
+              <Content />
+            </Route>
+          </Switch>
+        </Router>
       </ThemeProvider>
     );
   }

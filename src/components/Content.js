@@ -129,6 +129,7 @@ const Cards = styled.main`
 const CardDetail = styled.article`
   padding: 1rem;
   border: 1px #c6c6c6 solid;
+  background-color: rgba(0,0,0,0.03);;
 `;
 
 const InputRow = styled.div`
