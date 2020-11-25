@@ -4,8 +4,14 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../style/Themes";
 import { GlobalStyles } from "../style/GlobalStyles";
 import Header from "./Header";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Content from "./Content";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import UnitConverter from "../Pages/UnitConverter";
+import { BinarySystem } from "../Pages/BinarySystem";
 
 class App extends React.Component {
   state = { theme: "light" };
@@ -25,11 +31,23 @@ class App extends React.Component {
         <Router>
           <Header changeTheme={this.changeTheme} theme={this.state.theme} />
           <Switch>
-            <Route path="/sistema-binario">
-              <h1>soon</h1>
+            <Route exact path="/">
+              <Redirect to={"/conversor-de-medidas"} />
             </Route>
-            <Route path="/">
-              <Content />
+            <Route path="/conversor-de-medidas">
+              <UnitConverter />
+            </Route>
+            <Route path="/sistema-binario">
+              <BinarySystem />
+            </Route>
+            <Route path="/fuso-horario">
+              <p>oi</p>
+            </Route>
+            <Route path="/analise-combinatoria">
+              <p>oi</p>
+            </Route>
+            <Route path="/calculadora-cientifica">
+              <p>oi</p>
             </Route>
           </Switch>
         </Router>

@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "../../../src/enzyme";
-import LightBulb from "../../../src/components/icons/LightBulb";
+import LightBulb from "../../../src/Application/icons/LightBulb";
 
 describe("LightBulb component", () => {
   it("should return default width if none is passed", () => {

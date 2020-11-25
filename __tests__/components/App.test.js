@@ -1,5 +1,5 @@
 import React from "react";
-import App from "../../src/components/App";
+import App from "../../src/Application/App";
 import { mount, shallow } from "../../src/enzyme";
 
 describe("App component", () => {
