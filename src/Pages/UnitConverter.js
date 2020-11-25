@@ -15,7 +15,7 @@ import { BAR, PASCAL } from "../utils/pressure";
 import { GIGABYTE, MEGABYTE } from "../utils/digital";
 const convert = require("convert-units");
 
-class Content extends React.Component {
+class UnitConverter extends React.Component {
   state = {
     length: { value: 1, from: MILE, to: KILOMETER },
     speed: { value: 1, from: MILE_PER_HOUR, to: KILOMETER_PER_HOUR },
@@ -112,13 +112,13 @@ class Content extends React.Component {
     );
   }
 }
-export default Content;
+export default UnitConverter;
 
 const Cards = styled.main`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 1rem;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
 
   @media (max-width: 480px) {
     display: flex;
@@ -129,7 +129,7 @@ const Cards = styled.main`
 const CardDetail = styled.article`
   padding: 1rem;
   border: 1px #c6c6c6 solid;
-  background-color: rgba(0,0,0,0.03);;
+  background-color: rgba(0, 0, 0, 0.03);
 `;
 
 const InputRow = styled.div`
