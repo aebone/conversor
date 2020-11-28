@@ -19,4 +19,14 @@ export const GlobalStyles = createGlobalStyle`
   h2 { font-size: 1.2rem; border-bottom: 1px solid #c6c6c6; padding-bottom: 5px; }
   
   ul { padding: 0; }
+  
+  code {
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    padding: 4px;
+    display: block;
+    width: fit-content;
+    margin: 1rem auto;
+  }
 `;

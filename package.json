@@ -49,7 +49,8 @@
     "enzyme-adapter-react-16": "1.15.5",
     "flow-bin": "0.135.0",
     "node-fetch": "2.6.1",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "prop-types": "^15.7.2"
   },
   "jest": {
     "setupFilesAfterEnv": [

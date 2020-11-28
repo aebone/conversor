@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Container, Jumbotron, PageTitle } from "../style/Common";
 
 export class BinarySystem extends React.Component {
   state = {
@@ -19,6 +20,7 @@ export class BinarySystem extends React.Component {
   render() {
     return (
       <Container>
+        <PageTitle>Sistema Binário</PageTitle>
         <Jumbotron>
           <div>
             <Label>Hex:</Label>
@@ -49,8 +51,7 @@ export class BinarySystem extends React.Component {
             />
           </div>
         </Jumbotron>
-        <h1>Sistema Binário</h1>
-        <hr />
+
         <p>
           O <strong>sistema binário</strong> ou de base 2 é um sistema de
           numeração posicional em que todas as quantidades se representam com
@@ -106,34 +107,36 @@ export class BinarySystem extends React.Component {
         </p>
         <h3 align={"center"}>Bases</h3>
         <table cellPadding={8} border={1} align={"center"}>
-          <tr>
-            <th>
-              <strong>Binário</strong>
-            </th>
-            <th>
-              <strong>Octal</strong>
-            </th>
-            <th>
-              <strong>Decimal</strong>
-            </th>
-            <th>
-              <strong>Hexadecimal</strong>
-            </th>
-          </tr>
-          <tr>
-            <td>
-              <em>Base 2</em>
-            </td>
-            <td>
-              <em>Base 8</em>
-            </td>
-            <td>
-              <em>Base 10</em>
-            </td>
-            <td>
-              <em>Base 16</em>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>
+                <strong>Binário</strong>
+              </th>
+              <th>
+                <strong>Octal</strong>
+              </th>
+              <th>
+                <strong>Decimal</strong>
+              </th>
+              <th>
+                <strong>Hexadecimal</strong>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <em>Base 2</em>
+              </td>
+              <td>
+                <em>Base 8</em>
+              </td>
+              <td>
+                <em>Base 10</em>
+              </td>
+              <td>
+                <em>Base 16</em>
+              </td>
+            </tr>
+          </tbody>
         </table>
         <p>
           Portanto, se queremos converter o valor 248 de decimal (base 10) para
@@ -144,27 +147,6 @@ export class BinarySystem extends React.Component {
     );
   }
 }
-
-const Container = styled.div`
-  padding: 1.5rem 2rem;
-
-  code {
-    font-size: 1.2rem;
-    background-color: black;
-    padding: 4px;
-    display: block;
-    width: fit-content;
-    width: fit-content;
-    margin: 1rem auto;
-  }
-`;
-
-const Jumbotron = styled.div`
-    width; 100%;
-    padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.03);
-    border: 1px #c6c6c6 solid;
-`;
 
 const Label = styled.label`
   width: 6rem;

@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import UnitConverter from "../Pages/UnitConverter";
 import { BinarySystem } from "../Pages/BinarySystem";
+import {Timezone} from "../Pages/Timezone";
 
 class App extends React.Component {
   state = { theme: "light" };
@@ -41,7 +42,7 @@ class App extends React.Component {
               <BinarySystem />
             </Route>
             <Route path="/fuso-horario">
-              <p>oi</p>
+              <Timezone/>
             </Route>
             <Route path="/analise-combinatoria">
               <p>oi</p>
