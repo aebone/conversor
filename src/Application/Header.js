@@ -42,7 +42,7 @@ const Header = ({ changeTheme, theme }) => {
         <NavLink to="/sistema-binario">
           <NavItem>
             <Cpu width={16} />
-            <span>Sistema Binário</span>
+            <span>Sistema Numérico</span>
           </NavItem>
         </NavLink>
         <NavLink to="/fuso-horario">
