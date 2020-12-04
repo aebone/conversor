@@ -13,6 +13,7 @@ import { CELSIUS, FAHRENHEIT } from "../utils/temperature";
 import { HERTZ, MILLIHERTZ } from "../utils/frequency";
 import { BAR, PASCAL } from "../utils/pressure";
 import { GIGABYTE, MEGABYTE } from "../utils/digital";
+import { CardDetail } from "../style/Common";
 const convert = require("convert-units");
 
 class UnitConverter extends React.Component {
@@ -124,12 +125,6 @@ const Cards = styled.main`
     display: flex;
     flex-direction: column;
   }
-`;
-
-const CardDetail = styled.article`
-  padding: 1rem;
-  border: 1px #c6c6c6 solid;
-  background-color: rgba(0, 0, 0, 0.03);
 `;
 
 const InputRow = styled.div`

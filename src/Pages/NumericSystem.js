@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Jumbotron, PageTitle } from "../style/Common";
+import {
+  Container,
+  FlexBox,
+  Input,
+  Jumbotron,
+  PageTitle,
+} from "../style/Common";
 
 export class NumericSystem extends React.Component {
   state = {
@@ -22,38 +28,38 @@ export class NumericSystem extends React.Component {
       <Container>
         <PageTitle>Sistema Numérico</PageTitle>
         <Jumbotron>
-          <div>
+          <FlexBox>
             <Label htmlFor={"hex-input"}>Hex:</Label>
             <Input
               id={"hex-input"}
               value={this.state.hex}
               onChange={(event) => this.handleChange(event.target.value, 16)}
             />
-          </div>
-          <div>
+          </FlexBox>
+          <FlexBox>
             <Label htmlFor={"dec-input"}>Decimal:</Label>
             <Input
               id={"dec-input"}
               value={this.state.dec}
               onChange={(event) => this.handleChange(event.target.value, 10)}
             />
-          </div>
-          <div>
+          </FlexBox>
+          <FlexBox>
             <Label htmlFor={"oct-input"}>Octal:</Label>
             <Input
               id={"oct-input"}
               value={this.state.oct}
               onChange={(event) => this.handleChange(event.target.value, 8)}
             />
-          </div>
-          <div>
+          </FlexBox>
+          <FlexBox>
             <Label htmlFor={"bin-input"}>Binário:</Label>
             <Input
               id={"bin-input"}
               value={this.state.bin}
               onChange={(event) => this.handleChange(event.target.value, 2)}
             />
-          </div>
+          </FlexBox>
         </Jumbotron>
 
         <p>
@@ -167,15 +173,9 @@ export class NumericSystem extends React.Component {
 }
 
 const Label = styled.label`
-  width: 6rem;
+  width: 7rem;
   display: inline-block;
   font-size: 1.2rem;
   height: 2.6rem;
   padding: 0.4rem;
-`;
-
-const Input = styled.input`
-  height: 2.6rem;
-  width: 90%;
-  padding: 0.2rem;
 `;

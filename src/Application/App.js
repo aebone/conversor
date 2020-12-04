@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import UnitConverter from "../Pages/UnitConverter";
 import { NumericSystem } from "../Pages/NumericSystem";
-import { Timezone } from "../Pages/Timezone";
+import { Timezone } from "../Pages/Timezone/Timezone";
 
 class App extends React.Component {
   state = { theme: "light" };

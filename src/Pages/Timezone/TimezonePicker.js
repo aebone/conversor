@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import timezones from "../timezones";
+import timezones from "../../utils/timezones";
 import styled from "styled-components";
+import { Input } from "../../style/Common";
 
 export default class TimezonePicker extends React.Component {
   static propTypes = {
     value: PropTypes.string,
     offset: PropTypes.oneOf(["GMT", "UTC"]),
     onChange: PropTypes.func.isRequired,
-    className: PropTypes.string,
     style: PropTypes.shape({}),
     inputProps: PropTypes.shape({
       onBlur: PropTypes.func,
@@ -21,7 +21,6 @@ export default class TimezonePicker extends React.Component {
   static defaultProps = {
     value: "",
     offset: "GMT",
-    className: "",
     style: {},
     inputProps: {},
   };
@@ -44,8 +43,6 @@ export default class TimezonePicker extends React.Component {
   }
 
   stringifyZone(zone, offset) {
-    const ensure2Digits = (num) => (num > 9 ? `${num}` : `0${num}`);
-
     return `(${offset}${zone.offset}) ${zone.label}`;
   }
 
@@ -56,7 +53,13 @@ export default class TimezonePicker extends React.Component {
       zone.label
         .toLowerCase()
         .replace(/\s+/g, "")
-        .includes(this.state.query.toLowerCase().replace(/\s+/g, ""))
+        .includes(
+          this.state.query
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+        )
     );
   }
 
@@ -167,11 +170,9 @@ export default class TimezonePicker extends React.Component {
     const open = focus !== null;
 
     return (
-      <TimezonePickerWrapper
-        className={this.props.className}
-        style={this.props.style}
-      >
+      <TimezonePickerWrapper style={this.props.style}>
         <Input
+          id={"timezone-picker"}
           type="text"
           autoComplete="off"
           {...inputProps}
@@ -197,7 +198,6 @@ export default class TimezonePicker extends React.Component {
                 onMouseDown={() => this.handleChangeZone(zone)}
                 onMouseOver={() => this.handleHoverItem(index)}
                 onFocus={() => this.handleHoverItem(index)}
-                className={focus === index ? "focus" : ""}
               >
                 {this.stringifyZone(zone, offset)}
               </Button>
@@ -211,40 +211,35 @@ export default class TimezonePicker extends React.Component {
 
 const TimezonePickerWrapper = styled.div`
   position: relative;
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 0;
+  width: 60%;
+  margin: auto;
 `;
 
 const List = styled.ul`
-  width: 100%;
-  background: blanchedalmond;
   position: absolute;
-  max-height: 200px;
-  overflow-y: auto;
-  border: 1px solid #e6ebec;
+  max-height: 20rem;
+  overflow-y: scroll;
   margin-top: -1px;
   display: none;
-
+  width: 90%;
+  background: #fff;
+  border: 1px solid #c6c6c6;
   &.open {
     display: block;
   }
 `;
 
 const Button = styled.button`
-  color: #444;
-  padding: 5px 12px;
-  cursor: pointer;
-  outline: none;
-  display: block;
-  border: 0;
   width: 100%;
+  border: 0;
+  color: #444;
+  cursor: pointer;
+  display: block;
   text-align: left;
-  border-radius: 0;
-  font: inherit;
-  &.focus {
+  height: 3rem;
+  background: #fff;
+  &:focus,
+  &:hover {
     background: #f0f0f0;
   }
 `;
