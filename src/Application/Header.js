@@ -57,12 +57,6 @@ const Header = ({ changeTheme, theme }) => {
             <span>Análise Combinatória</span>
           </NavItem>
         </NavLink>
-        <NavLink to="/calculadora-cientifica">
-          <NavItem>
-            <Thermometer width={16} />
-            <span>Calculadora Científica</span>
-          </NavItem>
-        </NavLink>{" "}
       </Nav>
     </>
   );

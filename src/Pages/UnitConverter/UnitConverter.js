@@ -13,7 +13,7 @@ import { CELSIUS, FAHRENHEIT } from "../../utils/temperature";
 import { HERTZ, MILLIHERTZ } from "../../utils/frequency";
 import { BAR, PASCAL } from "../../utils/pressure";
 import { GIGABYTE, MEGABYTE } from "../../utils/digital";
-import { CardDetail } from "../../style/Common";
+import { CardDetail, Container, PageTitle } from "../../style/Common";
 const convert = require("convert-units");
 
 class UnitConverter extends React.Component {
@@ -38,82 +38,85 @@ class UnitConverter extends React.Component {
 
   render() {
     return (
-      <Cards>
-        {units.map((unit) => {
-          return (
-            <CardDetail key={unit.key}>
-              <h2>{unit.label}</h2>
-              <InputRow>
-                <label htmlFor={unit.key}>Valor</label>
-                <input
-                  id={`value-${unit.key}`}
-                  type={"number"}
-                  value={this.state[unit.key].value}
-                  onChange={(event) =>
-                    this.setState({
-                      [unit.key]: {
-                        ...this.state[unit.key],
-                        value: event.target.value,
-                      },
-                    })
-                  }
-                />
-              </InputRow>
-              <InputRow>
-                <label>De</label>
-                <select
-                  id={`from-${unit.key}`}
-                  value={this.state[unit.key].from}
-                  onChange={(event) =>
-                    this.setState({
-                      [unit.key]: {
-                        ...this.state[unit.key],
-                        from: event.target.value,
-                      },
-                    })
-                  }
-                >
-                  {unit.options.map((option, index) => {
-                    return (
-                      <option key={index} value={option.value}>
-                        {option.label}
-                      </option>
-                    );
-                  })}
-                </select>
-              </InputRow>
-              <InputRow>
-                <label>Para</label>
-                <select
-                  id={`to-${unit.key}`}
-                  value={this.state[unit.key].to}
-                  onChange={(event) =>
-                    this.setState({
-                      [unit.key]: {
-                        ...this.state[unit.key],
-                        to: event.target.value,
-                      },
-                    })
-                  }
-                >
-                  {unit.options.map((option, index) => {
-                    return (
-                      <option key={index} value={option.value}>
-                        {option.label}
-                      </option>
-                    );
-                  })}
-                </select>
-              </InputRow>
-              <Result>
-                {convert(this.state[unit.key].value)
-                  .from(this.state[unit.key].from)
-                  .to(this.state[unit.key].to)}
-              </Result>
-            </CardDetail>
-          );
-        })}
-      </Cards>
+      <Container>
+        <PageTitle>Conversor de Medidas</PageTitle>
+        <Cards>
+          {units.map((unit) => {
+            return (
+              <CardDetail key={unit.key}>
+                <h2>{unit.label}</h2>
+                <InputRow>
+                  <label htmlFor={unit.key}>Valor</label>
+                  <input
+                    id={`value-${unit.key}`}
+                    type={"number"}
+                    value={this.state[unit.key].value}
+                    onChange={(event) =>
+                      this.setState({
+                        [unit.key]: {
+                          ...this.state[unit.key],
+                          value: event.target.value,
+                        },
+                      })
+                    }
+                  />
+                </InputRow>
+                <InputRow>
+                  <label>De</label>
+                  <select
+                    id={`from-${unit.key}`}
+                    value={this.state[unit.key].from}
+                    onChange={(event) =>
+                      this.setState({
+                        [unit.key]: {
+                          ...this.state[unit.key],
+                          from: event.target.value,
+                        },
+                      })
+                    }
+                  >
+                    {unit.options.map((option, index) => {
+                      return (
+                        <option key={index} value={option.value}>
+                          {option.label}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </InputRow>
+                <InputRow>
+                  <label>Para</label>
+                  <select
+                    id={`to-${unit.key}`}
+                    value={this.state[unit.key].to}
+                    onChange={(event) =>
+                      this.setState({
+                        [unit.key]: {
+                          ...this.state[unit.key],
+                          to: event.target.value,
+                        },
+                      })
+                    }
+                  >
+                    {unit.options.map((option, index) => {
+                      return (
+                        <option key={index} value={option.value}>
+                          {option.label}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </InputRow>
+                <Result>
+                  {convert(this.state[unit.key].value)
+                    .from(this.state[unit.key].from)
+                    .to(this.state[unit.key].to)}
+                </Result>
+              </CardDetail>
+            );
+          })}
+        </Cards>
+      </Container>
     );
   }
 }
@@ -123,7 +126,6 @@ const Cards = styled.main`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 1rem;
-  padding: 1.5rem 2rem;
 
   @media (max-width: 480px) {
     display: flex;

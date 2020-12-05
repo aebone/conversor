@@ -55,11 +55,6 @@ class App extends React.Component {
                 title={"Conversor de Medidas | Análise Combinatória"}
               />
             </Route>
-            <Route path="/calculadora-cientifica">
-              <ScientificCalculator
-                title={"Conversor de Medidas | Calculadora Científica"}
-              />
-            </Route>
           </Switch>
         </Router>
       </ThemeProvider>
