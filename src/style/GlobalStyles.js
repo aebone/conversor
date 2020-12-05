@@ -29,4 +29,26 @@ export const GlobalStyles = createGlobalStyle`
     width: fit-content;
     margin: 1rem auto;
   }
+  
+  button {
+    background: #888fa1;
+    color: #fff;     
+    font-size: .8em;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem 1rem 1.6rem 1.6rem;
+    outline: none;
+    padding: .8rem;
+  }
+    
+  .sm-button {
+    color: #fff;
+    background: #202742;
+    border-radius: 1rem;
+    padding: .6rem;
+  }
+  
+  .orange-button {
+    background: #cc8d4c
+  }
 `;
