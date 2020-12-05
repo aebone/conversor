@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import timezones from "../../utils/timezones";
 import styled from "styled-components";
-import { Input } from "../../style/Common";
 
 export default class TimezonePicker extends React.Component {
   static propTypes = {
@@ -170,7 +169,7 @@ export default class TimezonePicker extends React.Component {
     const open = focus !== null;
 
     return (
-      <TimezonePickerWrapper style={this.props.style}>
+      <TimezonePickerWrapper>
         <Input
           id={"timezone-picker"}
           type="text"
@@ -242,4 +241,11 @@ const Button = styled.button`
   &:hover {
     background: #f0f0f0;
   }
+`;
+
+const Input = styled.input`
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0 0.5rem;
 `;

@@ -1,12 +1,12 @@
 import React from "react";
-import styled from "styled-components";
 import {
   Container,
   FlexBox,
   Input,
   Jumbotron,
   PageTitle,
-} from "../style/Common";
+  Label,
+} from "../../style/Common";
 
 export class NumericSystem extends React.Component {
   state = {
@@ -29,7 +29,7 @@ export class NumericSystem extends React.Component {
         <PageTitle>Sistema Numérico</PageTitle>
         <Jumbotron>
           <FlexBox>
-            <Label htmlFor={"hex-input"}>Hex:</Label>
+            <Label htmlFor={"hex-input"}>Hexadecimal</Label>
             <Input
               id={"hex-input"}
               value={this.state.hex}
@@ -37,7 +37,7 @@ export class NumericSystem extends React.Component {
             />
           </FlexBox>
           <FlexBox>
-            <Label htmlFor={"dec-input"}>Decimal:</Label>
+            <Label htmlFor={"dec-input"}>Decimal</Label>
             <Input
               id={"dec-input"}
               value={this.state.dec}
@@ -45,7 +45,7 @@ export class NumericSystem extends React.Component {
             />
           </FlexBox>
           <FlexBox>
-            <Label htmlFor={"oct-input"}>Octal:</Label>
+            <Label htmlFor={"oct-input"}>Octal</Label>
             <Input
               id={"oct-input"}
               value={this.state.oct}
@@ -53,7 +53,7 @@ export class NumericSystem extends React.Component {
             />
           </FlexBox>
           <FlexBox>
-            <Label htmlFor={"bin-input"}>Binário:</Label>
+            <Label htmlFor={"bin-input"}>Binário</Label>
             <Input
               id={"bin-input"}
               value={this.state.bin}
@@ -171,11 +171,3 @@ export class NumericSystem extends React.Component {
     );
   }
 }
-
-const Label = styled.label`
-  width: 7rem;
-  display: inline-block;
-  font-size: 1.2rem;
-  height: 2.6rem;
-  padding: 0.4rem;
-`;

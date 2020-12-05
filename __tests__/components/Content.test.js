@@ -1,5 +1,5 @@
 import React from "react";
-import UnitConverter from "../../src/Pages/UnitConverter";
+import UnitConverter from "../../src/Pages/UnitConverter/UnitConverter";
 import { shallow } from "../../src/enzyme";
 
 describe("UnitConverter component", () => {

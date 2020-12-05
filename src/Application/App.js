@@ -10,9 +10,10 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import UnitConverter from "../Pages/UnitConverter";
-import { NumericSystem } from "../Pages/NumericSystem";
+import UnitConverter from "../Pages/UnitConverter/UnitConverter";
+import { NumericSystem } from "../Pages/NumericSystem/NumericSystem";
 import { Timezone } from "../Pages/Timezone/Timezone";
+import { CombinatorialAnalysis } from "../Pages/CombinatoryAnalysis/CombinatorialAnalysis";
 
 class App extends React.Component {
   state = { theme: "light" };
@@ -45,7 +46,7 @@ class App extends React.Component {
               <Timezone />
             </Route>
             <Route path="/analise-combinatoria">
-              <p>oi</p>
+              <CombinatorialAnalysis />
             </Route>
             <Route path="/calculadora-cientifica">
               <p>oi</p>

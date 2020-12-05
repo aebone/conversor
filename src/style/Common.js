@@ -23,18 +23,60 @@ export const CenteredLabel = styled.label`
 `;
 
 export const Input = styled.input`
-  height: 2.6rem;
-  width: 100%;
-  padding: 0.2rem 0.8rem;
+  height: 3rem;
+  flex-grow: 1;
   font-size: 1rem;
+  padding: 0 0.5rem;
+`;
+
+export const Select = styled.select`
+  height: 3rem;
+  flex-grow: 1;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+`;
+
+export const Label = styled.label`
+  width: 14rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-align: right;
+  padding: 0.5rem 2rem 0.5rem 0;
+
+  @media (max-width: 640px) {
+    text-align: left;
+  }
 `;
 
 export const FlexBox = styled.div`
   display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  flex-wrap: wrap;
 `;
 
 export const CardDetail = styled.article`
   padding: 1rem;
   border: 1px #c6c6c6 solid;
   background-color: rgba(0, 0, 0, 0.03);
+`;
+
+export const Button = styled.button`
+  display: block;
+  padding: 1.5rem 6rem;
+  margin: 1rem 0;
+  background: ${({ theme }) => theme.highlight};
+  color: ${({ theme }) => theme.body};
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #00526d;
+  }
+`;
+
+export const FlexRightContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;
