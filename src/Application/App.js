@@ -14,6 +14,7 @@ import UnitConverter from "../Pages/UnitConverter/UnitConverter";
 import { NumericSystem } from "../Pages/NumericSystem/NumericSystem";
 import { Timezone } from "../Pages/Timezone/Timezone";
 import { CombinatorialAnalysis } from "../Pages/CombinatoryAnalysis/CombinatorialAnalysis";
+import { ScientificCalculator } from "../Pages/ScientificCalculator/ScientificCalculator";
 
 class App extends React.Component {
   state = { theme: "light" };
@@ -37,19 +38,27 @@ class App extends React.Component {
               <Redirect to={"/conversor-de-medidas"} />
             </Route>
             <Route path="/conversor-de-medidas">
-              <UnitConverter />
+              <UnitConverter
+                title={"Conversor de Medidas | Conversor de Unidades"}
+              />
             </Route>
-            <Route path="/sistema-binario">
-              <NumericSystem />
+            <Route path="/sistema-numerico">
+              <NumericSystem
+                title={"Conversor de Medidas | Sistema Numérico"}
+              />
             </Route>
             <Route path="/fuso-horario">
-              <Timezone />
+              <Timezone title={"Conversor de Medidas | Fuso Horário"} />
             </Route>
             <Route path="/analise-combinatoria">
-              <CombinatorialAnalysis />
+              <CombinatorialAnalysis
+                title={"Conversor de Medidas | Análise Combinatória"}
+              />
             </Route>
             <Route path="/calculadora-cientifica">
-              <p>oi</p>
+              <ScientificCalculator
+                title={"Conversor de Medidas | Calculadora Científica"}
+              />
             </Route>
           </Switch>
         </Router>

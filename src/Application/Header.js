@@ -39,7 +39,7 @@ const Header = ({ changeTheme, theme }) => {
             <span>Conversor de Medidas</span>
           </NavItem>
         </NavLink>
-        <NavLink to="/sistema-binario">
+        <NavLink to="/sistema-numerico">
           <NavItem>
             <Cpu width={16} />
             <span>Sistema Numérico</span>

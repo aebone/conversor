@@ -16,6 +16,10 @@ export class NumericSystem extends React.Component {
     bin: 1,
   };
 
+  componentDidMount() {
+    document.title = this.props.title;
+  }
+
   handleChange(value, baseFrom) {
     this.setState({ hex: parseInt(value, baseFrom).toString(16) });
     this.setState({ dec: parseInt(value, baseFrom).toString(10) });

@@ -24,8 +24,10 @@ import {
   combinationWithRepetition,
 } from "../../utils/combinatory-analysis";
 
-export const CombinatorialAnalysis = () => {
+export const CombinatorialAnalysis = (props) => {
+  document.title = props.title;
   const [result, setResult] = useState();
+
   const calculate = () => {
     switch (type) {
       case SIMPLE_ARRANGEMENT:

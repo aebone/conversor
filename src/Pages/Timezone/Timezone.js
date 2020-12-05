@@ -24,6 +24,7 @@ export class Timezone extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(this.updateDate, 1000);
+    document.title = this.props.title;
   }
 
   updateDate = () => {

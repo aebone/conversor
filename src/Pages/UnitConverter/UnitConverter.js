@@ -32,6 +32,10 @@ class UnitConverter extends React.Component {
     digital: { value: 1, from: MEGABYTE, to: GIGABYTE },
   };
 
+  componentDidMount() {
+    document.title = this.props.title;
+  }
+
   render() {
     return (
       <Cards>
