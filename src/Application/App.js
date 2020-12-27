@@ -5,7 +5,7 @@ import { darkTheme, lightTheme } from "../style/Themes";
 import { GlobalStyles } from "../style/GlobalStyles";
 import Header from "./Header";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -14,7 +14,6 @@ import UnitConverter from "../Pages/UnitConverter/UnitConverter";
 import { NumericSystem } from "../Pages/NumericSystem/NumericSystem";
 import { Timezone } from "../Pages/Timezone/Timezone";
 import { CombinatorialAnalysis } from "../Pages/CombinatoryAnalysis/CombinatorialAnalysis";
-import { ScientificCalculator } from "../Pages/ScientificCalculator/ScientificCalculator";
 
 class App extends React.Component {
   state = { theme: "light" };
